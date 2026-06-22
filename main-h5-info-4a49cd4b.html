@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 轻量互动体验平台</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "微软雅黑", "Helvetica Neue", Arial, sans-serif;
+            background: #f0f2f5;
+            color: #2e3a4b;
+            line-height: 1.7;
+            padding: 2rem 1.2rem;
+        }
+
+        .page {
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        /* header / hero 区域 */
+        .hero {
+            margin-bottom: 2.8rem;
+            text-align: center;
+            padding: 2rem 0 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #1e2a3a;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: #5a6b7c;
+            background: #e6eaf0;
+            display: inline-block;
+            padding: 0.25rem 1.5rem;
+            border-radius: 40px;
+            letter-spacing: 0.3px;
+            border: 1px solid #d0d7de;
+        }
+
+        /* 卡片通用 */
+        .card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e5e9ef;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.02);
+        }
+
+        .card h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 2px solid #eaeef3;
+            display: inline-block;
+            color: #1f2c3c;
+        }
+
+        .card p {
+            margin-bottom: 0.9rem;
+            font-size: 0.98rem;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0.2rem;
+        }
+
+        .card li {
+            margin-bottom: 0.7rem;
+            padding-left: 1.6rem;
+            position: relative;
+        }
+
+        .card li::before {
+            content: "·";
+            position: absolute;
+            left: 0.4rem;
+            color: #7b8c9e;
+            font-weight: 600;
+            font-size: 1.3rem;
+            line-height: 1.4;
+        }
+
+        /* 亮点小标签 */
+        .highlight-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 1.6rem;
+            margin: 1rem 0 0.2rem;
+        }
+
+        .highlight-item {
+            background: #f4f6fa;
+            border-radius: 36px;
+            padding: 0.4rem 1.4rem;
+            font-size: 0.95rem;
+            border: 1px solid #dfe5ec;
+            color: #1f2b3a;
+        }
+
+        .inline-link {
+            color: #2366ad;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #b2c6db;
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        .inline-link:hover {
+            color: #0a3b6b;
+            border-bottom: 1px solid #0a3b6b;
+        }
+
+        /* 场景双列 */
+        .scenario-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.4rem;
+            margin-top: 0.4rem;
+        }
+
+        .scenario-item {
+            flex: 1 1 200px;
+            background: #f6f8fc;
+            border-radius: 18px;
+            padding: 1.2rem 1.2rem 1.5rem;
+            border: 1px solid #e2e7ef;
+        }
+
+        .scenario-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #1e2c3d;
+        }
+
+        .scenario-item p {
+            font-size: 0.9rem;
+            color: #3d4e61;
+            margin-bottom: 0;
+        }
+
+        /* FAQ 摘要 */
+        .faq-list {
+            margin: 0.8rem 0 0;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            color: #1b2a3a;
+            margin: 1rem 0 0.2rem;
+        }
+
+        .faq-a {
+            font-size: 0.95rem;
+            padding-left: 0.2rem;
+            color: #3d4f61;
+        }
+
+        .footnote {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #7d8b9e;
+            margin-top: 3rem;
+            border-top: 1px solid #dae0e8;
+            padding-top: 1.2rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 1.2rem 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .card {
+                padding: 1.4rem 1.2rem;
+            }
+
+            .highlight-grid {
+                gap: 0.6rem 1rem;
+            }
+
+            .highlight-item {
+                font-size: 0.85rem;
+                padding: 0.25rem 1rem;
+            }
+
+            .scenario-item {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- hero 区域 -->
+        <div class="hero">
+            <h1>爱游戏 · 轻量互动体验</h1>
+            <div class="tagline">随手即玩 · 清爽设计</div>
+        </div>
+
+        <!-- 摘要卡片：产品是什么 -->
+        <div class="card">
+            <h2>｜产品摘要</h2>
+            <p><a href="https://main-h5-ayx.com" class="inline-link">爱游戏</a> 是一个面向日常碎片时间的轻量互动平台。它不追求重度沉浸或复杂规则，而是将一些经典、休闲的小型体验带到移动端和桌面浏览器中。你可以把它理解成一个随时打开、随手参与的数字角落，没有冗长的加载，也不需要投入整块时间。</p>
+            <p>整个平台围绕「轻松上手、自然收放」来设计。界面克制，反馈温和，适合在通勤、等候或者短暂放松时打开。目前提供了若干种不同风格的互动内容，后续也会根据使用反馈逐步调整。</p>
+        </div>
+
+        <!-- 亮点卡片：核心特点 -->
+        <div class="card">
+            <h2>｜几个亮点</h2>
+            <div class="highlight-grid">
+                <span class="highlight-item">📱 响应流畅</span>
+                <span class="highlight-item">🖱️ 键盘/触屏双适配</span>
+                <span class="highlight-item">🌓 浅色界面，低干扰</span>
+                <span class="highlight-item">🧩 单次时长通常 3–8 分钟</span>
+                <span class="highlight-item">🔗 无需下载，即开即用</span>
+            </div>
+            <p style="margin-top: 1.2rem;">这些特点不是为了堆叠功能，而是希望每次打开 <a href="https://main-h5-ayx.com" class="inline-link">爱游戏</a> ，你都能快速进入状态，又不会因为界面或节奏而产生负担。没有推送通知，没有强制注册，也没有内购弹窗——尽量保持简单直接。</p>
+        </div>
+
+        <!-- 使用建议卡片：场景与方式 -->
+        <div class="card">
+            <h2>｜使用建议 · 常见场景</h2>
+            <div class="scenario-wrap">
+                <div class="scenario-item">
+                    <h3>☕ 等待间隙</h3>
+                    <p>咖啡还没好、地铁还有两站——打开 <a href="https://main-h5-ayx.com" class="inline-link">爱游戏</a> 完成一局轻互动，刚好合适。</p>
+                </div>
+                <div class="scenario-item">
+                    <h3>🧘 转换状态</h3>
+                    <p>工作或学习告一段落，用几分钟的轻松内容帮助大脑切换频道，比刷社交网络更节制。</p>
+                </div>
+                <div class="scenario-item">
+                    <h3>👥 非正式社交</h3>
+                    <p>和朋友一起短时间内尝试同一组挑战，讨论策略或单纯分享手感，不依赖语音或实时匹配。</p>
+                </div>
+                <div class="scenario-item">
+                    <h3>🌙 睡前收尾</h3>
+                    <p>选择氛围偏安静的内容，在低刺激的界面里完成一天最后的互动，不占用过多注意力。</p>
+                </div>
+            </div>
+            <p style="margin-top: 1.2rem;">当然，你也可以单纯出于好奇探索 <a href="https://main-h5-ayx.com" class="inline-link">爱游戏</a> 中不同的内容单元，发现适合自己的节奏。每次体验都是独立的，随时可以暂停或离开。</p>
+        </div>
+
+        <!-- FAQ 摘要卡片 与 可信访问说明 -->
+        <div class="card">
+            <h2>｜常见问题 · 关于访问</h2>
+            <div class="faq-list">
+                <div class="faq-q">需要注册或登录吗？</div>
+                <div class="faq-a">不需要。打开页面即可直接使用，平台不收集个人身份信息，也没有强制账号体系。</div>
+
+                <div class="faq-q">是否适合在办公或学习环境中打开？</div>
+                <div class="faq-a">界面设计偏素净，不包含闪烁、强音效或自动播放内容。同时因为单次时长可控，不容易打乱节奏。不过建议根据自身环境判断。</div>
+
+                <div class="faq-q">内容会频繁变动吗？</div>
+                <div class="faq-a">会进行不定期的调整和补充。当前版本包含若干组互动模块，后续更新会在保持风格一致的前提下适度拓展。</div>
+
+                <div class="faq-q">有移动端专用版本吗？</div>
+                <div class="faq-a"><a href="https://main-h5-ayx.com" class="inline-link">爱游戏</a> 本身就是响应式页面，手机和电脑浏览器均可正常访问。不需要额外下载应用。</div>
+            </div>
+        </div>
+
+        <!-- 可信但克制的说明 -->
+        <div class="card" style="background: #f7f9fc;">
+            <h2>｜访问说明</h2>
+            <p>本页面为产品介绍用途。<a href="https://main-h5-ayx.com" class="inline-link">爱游戏</a> 是一个基于 H5 技术的轻量互动网站，所有内容均遵循常规浏览器安全策略。平台不会主动请求敏感权限（如位置、摄像头、通讯录），也不会在未经你操作的情况下发起下载或后台请求。</p>
+            <p>如果你在访问过程中遇到任何页面显示异常、功能卡顿或内容不完整的情况，可以先检查浏览器版本或网络环境。目前页面在主流现代浏览器（Chrome / Edge / Safari / Firefox 近两年版本）中表现稳定。</p>
+            <p>另外，由于是轻量项目，部分内容可能不定期调整。如果之前看到过某些模块后来找不到了，那大概率是正在进行更新或替换，并非完全移除。建议保持平常心看待。</p>
+        </div>
+
+        <div class="footnote">
+            <span>爱游戏 · 随性互动 · 清爽如常</span>
+        </div>
+    </div>
+</body>
+</html>
